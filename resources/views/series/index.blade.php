@@ -19,7 +19,7 @@
     <a href="/series/create" class="btn btn-dark">Adicionar</a>
     <ul class="list-group">
         @foreach ($series as $series)
-            <li class="list-group-item">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
                 {{ $series->title }}
                 <form action="/series/{{ $series->id }}" method="POST">
                     @csrf
