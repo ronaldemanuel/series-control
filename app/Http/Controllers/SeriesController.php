@@ -12,7 +12,7 @@ class SeriesController extends Controller
     {
         $series = Series::all();
 
-        return view('series.index', [compact('series')]);
+        return view('series.index', compact('series'));
     }
 
     public function create() 
@@ -24,7 +24,7 @@ class SeriesController extends Controller
     {
         Series::create($request->all());
 
-        return redirect('series.index')
+        return redirect('/series')
             ->with('msg', 'Série ' . $request->title . ' criada com sucesso!');
     }
 
@@ -33,7 +33,7 @@ class SeriesController extends Controller
         $series = Series::findOrFail($id);
         Series::destroy($id);
 
-        return redirect('series.index')
+        return redirect('/series')
             ->with('msg', 'Série ' . $series->title . ' excluída com sucesso');
     }
 }
