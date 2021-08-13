@@ -12,7 +12,7 @@ class SeriesController extends Controller
     {
         $series = Series::all();
 
-        return view('series.index', [compact('series')]);
+        return view('series.index', compact('series'));
     }
 
     public function create() 
