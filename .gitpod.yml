@@ -4,5 +4,6 @@ ports:
 tasks:
   - init: composer install
     command: >
+      cp .env.example .env;
       php artisan key:generate;
       php artisan serve
